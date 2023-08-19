@@ -13,23 +13,24 @@
         console.log("Function scope but refer global this: ", this);
       }
 
-      // object scope this function decralation
+      // object scope | this function decralation
       let a = {
         name: "Muhammad Raza Bangi",
         country: "Canada",
         info: function () {
-          console.log(`${this.name} is from ${this.country}`);
-          console.log("Object scope with normal function: ", this);
+          console.log(`${this.name} is from ${this.country}`); // Muhammad Raza Bangi is from Canada
+          console.log("Object scope with normal function: ", this); // showing all property and method which is include in this object 
         }
       }
 
-      // object scope this arrow function
+      // object scope | this arrow function
       let b = {
         name: "Muhammad Raza Bangi",
         country: "Canada",
         info: () => {
-          console.log(`${b.name} is from ${b.country}`);
-          console.log("Object scope with arrow function: ", this);
+          console.log(`${this.name} is from ${this.country}`); // is from undefined
+          console.log(`${b.name} is from ${b.country}`); // Muhammad Raza Bangi is from Country
+          console.log("Object scope with arrow function: ", this); // showing global object (window)
         }
       }
 
