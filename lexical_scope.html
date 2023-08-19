@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical Scope</title>
+  </head>
+  <body>
+    <script>
+      function test() {
+        let d = " Test";
+      }
+
+      let a = "Hello ";    
+
+      function abc() {
+        let b = "Raza";
+        xyz();
+
+        function xyz() {
+          let c = " How are you";
+          console.log(a + b + c); // Hello Raza How are you
+          // console.log(a + b + c + d); // Uncaught ReferenceError: d is not defined
+        }
+      }
+
+      abc();
+    </script>
+  </body>
+</html>

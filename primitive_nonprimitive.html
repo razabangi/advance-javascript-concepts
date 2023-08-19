@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical Scope</title>
+  </head>
+  <body>
+    <script>
+      // =========== Primitive Data Types
+      let number = 1; // number
+      let name = "Muhammad Raza Bangi"; // string
+      let isActive = true; // boolean
+      let abst; // undefined
+      let status = null; // object (JS creator said by mistake it was done by him.)
+
+      // =========== Non Primitive Date Types
+      let abc = () => {
+        console.log("something will happen in this function");
+      }
+      abc.info = {
+        age: 26,
+        country: "Canada"
+      };
+
+      console.log(abc.info);
+      console.log(typeof(abc)); // showing function but behave like object
+
+      function sum() {
+        console.log("This function is responsible for sum");
+      }
+      sum.info = "Look it also behave like object. damn!";
+
+      console.log(sum.info);
+      console.log(typeof(sum)); // showing function but behave like object
+    </script>
+  </body>
+</html>

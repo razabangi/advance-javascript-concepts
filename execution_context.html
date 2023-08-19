@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Execution Context | Execution Stack</title>
+  </head>
+  <body>
+    <script>
+      let welcome= "welcome";
+
+      console.log("start");
+      function a() {
+        debugger;
+        console.log("Hi from function A");
+        b();
+      }
+
+      function b() {
+        debugger;
+        console.log("Hi from function B");
+        c();
+      }
+
+      function c() {
+        debugger;
+        console.log("Hi from function C");
+      }
+
+      debugger;
+      a();
+      console.log("end");
+    </script>
+  </body>
+</html>

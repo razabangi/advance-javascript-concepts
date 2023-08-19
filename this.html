@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical Scope</title>
+  </head>
+  <body>
+    <script>
+      console.log("Global this: ", this);
+
+      function abc() {
+        console.log("Function scope but refer global this: ", this);
+      }
+
+      // object scope this function decralation
+      let a = {
+        name: "Muhammad Raza Bangi",
+        country: "Canada",
+        info: function () {
+          console.log(`${this.name} is from ${this.country}`);
+          console.log("Object scope with normal function: ", this);
+        }
+      }
+
+      // object scope this arrow function
+      let b = {
+        name: "Muhammad Raza Bangi",
+        country: "Canada",
+        info: () => {
+          console.log(`${b.name} is from ${b.country}`);
+          console.log("Object scope with arrow function: ", this);
+        }
+      }
+
+      abc();
+      a.info();
+      b.info();
+    </script>
+  </body>
+</html>
